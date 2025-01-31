@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio Amigo Secreto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎁 Sorteio Amigo Secreto 🎁</h1>
+
+        <!-- Formulário para adicionar participantes -->
+        <form id="participant-form">
+            <input type="text" id="name" placeholder="Nome do participante" required>
+            <input type="email" id="email" placeholder="E-mail do participante" required>
+            <button type="submit">Adicionar Participante</button>
+        </form>
+
+        <!-- Lista de participantes -->
+        <ul id="participants-list"></ul>
+
+        <!-- Botão para configurar pares -->
+        <button id="setup-pairs" disabled>Configurar Pares</button>
+
+        <!-- Formulário para selecionar pares -->
+        <div id="pairs-setup" class="hidden">
+            <h3>Selecione os pares</h3>
+            <div id="pairs-container"></div>
+            <button id="finalize-draw">Finalizar Sorteio</button>
+        </div>
+
+        <!-- Resultados -->
+        <div id="results"></div>
+    </div>
+
+    <!-- EmailJS Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("M5NOKRnbv9XZcdQcN"); <!-- Substitua pela sua Public Key -->
+    </script>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
